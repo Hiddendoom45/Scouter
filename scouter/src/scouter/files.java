@@ -1,8 +1,18 @@
 package scouter;
 
 	import java.io.*;
+	/**
+	 * basic class used to handle file iO
+	 * @author 
+	 *
+	 */
 	public class files{
 	  public String fileData;
+	  /**
+	   * create file with name
+	   * @param name name of file
+	   * @return
+	   */
 	  public boolean createFile(String name){
 	    try{
 	      File file=new File(name);
@@ -19,6 +29,11 @@ package scouter;
 	      return false;
 	    }
 	}
+	  /**
+	   * delete file with name
+	   * @param filename
+	   * @return
+	   */
 	  public boolean deleteFile(String filename){
 	    File file= new File(filename);
 	    boolean success=file.delete();
@@ -28,7 +43,12 @@ package scouter;
 	    }
 	    return true;
 	  }
-	  
+	  /**
+	   * rename file
+	   * @param oldName
+	   * @param newName
+	   * @return
+	   */
 	  public boolean renameFile(String oldName,String newName){
 	    File file=new File(oldName);
 	    File file2= new File(newName);
@@ -38,6 +58,11 @@ package scouter;
 	    }
 	    return true;
 	  }
+	  /**
+	   * write string to file using buffered file writer
+	   * @param file
+	   * @param msg
+	   */
 	  public void writeToFile(String file,String msg){
 	    try{
 	      BufferedWriter out = new BufferedWriter(new FileWriter(file));
@@ -48,7 +73,10 @@ package scouter;
 	      System.out.println("Write in file error");
 	    }
 	  }
-	  
+	  /**
+	   * read data from file in lines
+	   * @param file
+	   */
 	  public void readFile(String file){
 	    try{
 	      BufferedReader in = new BufferedReader(new FileReader(file));
@@ -62,6 +90,10 @@ package scouter;
 	      System.out.println("Reading file error");
 	    }
 	  }
+	  /**
+	   * get the strings read using {@link #readFile(String)}
+	   * @return
+	   */
 	  public String getFileData(){
 	    return fileData;
 	  }

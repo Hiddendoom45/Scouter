@@ -52,10 +52,17 @@ import java.awt.Color;
 import javax.swing.DefaultListCellRenderer;
 import java.awt.Graphics;
 import javax.swing.KeyStroke;
+/**
+ * main class for scouter
+ * @author Allen
+ *
+ */
 public class ScoutMain extends JFrame {
-    
+    //start thread for countdown timer?
 	private s1 sT=new s1("time",true);
+	//used to do more of the calculations thing
 	private scout s;
+	//mass of swing elements(very messy)
 	private JPanel contentPane;
 	private JTextField comIn;
 	private JTextField Red_3;
@@ -837,6 +844,7 @@ public class ScoutMain extends JFrame {
 		});
 		CB_Team.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
+				//change color based on whether it's a red team or blue
 				if(CB_Team.getSelectedIndex()>0&&CB_Team.getSelectedIndex()<4||CB_Team.getSelectedIndex()==7){
 					CB_Team.setRenderer(new DefaultListCellRenderer(){
 						private static final long serialVersionUID = 7160090250079376197L;

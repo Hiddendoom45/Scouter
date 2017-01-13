@@ -25,16 +25,23 @@ import java.awt.event.InputMethodListener;
 import java.awt.event.InputMethodEvent;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+/**
+ * main class used to handle the frame and other visual aspects of viewing the data collected by the scouter
+ */
 public class DataMain extends JFrame {
+	//table models, passed to data class for further processing
 	private matchTablem tm;
 	private matchdTablem tdm;
 	private scoreTablem sm;
 	private scoreTTablem tsm;
 	private teamTablem ttm;
+	//used for further calculations
 	private data d=new data();
+	//search strings? dunno
 	private String matches="";
 	private String teams="";
 	private String team="";
+	//swing elements
 	private JPanel contentPane;
 	private JTextField TF_matchNum;
 	private JTable T_matchd;
@@ -558,6 +565,7 @@ public class DataMain extends JFrame {
 				B_resetMS.setEnabled(true);
 			}
 		});
+		//resets the matches searched
 		B_resetMT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				B_searchTS.setEnabled(false);
@@ -580,7 +588,7 @@ public class DataMain extends JFrame {
 		});
 		
 		
-		//to detect when the output changes and to autoscroll
+		//to detect when the output changes and to autoscroll(likely the cause of thread locking issue)
 		output.getDocument().addDocumentListener(new OutputDocListener(output,SB_outV));
 		
 	}

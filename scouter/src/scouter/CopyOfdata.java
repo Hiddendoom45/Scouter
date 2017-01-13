@@ -2,7 +2,11 @@ package scouter;
 import java.util.Vector;
 import javax.swing.*;
 
-
+/**
+ * copies in case stuff got messed up
+ * @author Allen
+ *
+ */
 public class CopyOfdata {
 	private matchTablem tm;
 	private matchdTablem tdm;

@@ -1,10 +1,16 @@
 package scouter;
 
 import java.util.Arrays;
-
+/**
+ * data on the matches
+ * @author Allen
+ *
+ */
 public class Match {
+	//arrays on the team #s
 	private int[] red=new int[3];
 	private int[] blue=new int[3];
+	//arrays on the scores, each value a differnet socre element
 	private int[] Rscore=new int[5];
 	private int[] Bscore=new int[5];
 	private String[] comments;

@@ -5,11 +5,13 @@ import javax.swing.*;
 
 
 public class data {
+	//table models for the various talbes used
 	private matchTablem tm;
 	private matchdTablem tdm;
 	private scoreTablem sm;
 	private scoreTTablem tsm;
 	private teamTablem ttm;
+	//all sorts of swing variables
 	private JTextArea output;
 	private JTable match;
 	private JTable matchd;
@@ -28,6 +30,19 @@ public class data {
 	//default constructor
 	public data(){
 	}
+	/**
+	 * sets the values of the ones held in private to the ones in the main JPanel
+	 * @param output
+	 * @param match
+	 * @param matchd
+	 * @param tm
+	 * @param tdm
+	 * @param sm
+	 * @param tsm
+	 * @param score
+	 * @param scoret
+	 * @param ttm
+	 */
 	public void setDataV(JTextArea output,JTable match,JTable matchd,matchTablem tm,matchdTablem tdm,scoreTablem sm,scoreTTablem tsm,JTable score,JTable scoret,teamTablem ttm){//sets the variables needed by data after all of them have been initialized
 		this.output=output;
 		this.match=match;
@@ -325,7 +340,6 @@ public class data {
 							tMatch.addElement(team.getMatches(m).getNum());
 					}
 				} catch (NullPointerException e) {
-					// TODO Auto-generated catch block
 					System.out.println("reached end of team/match file");
 				}
 			}
@@ -346,6 +360,10 @@ public class data {
 		}
 		
 	}
+	/**
+	 * set the team to search to this
+	 * @param team
+	 */
 	public void setTeam(Team team){
 		this.team=team;
 	}

@@ -1,7 +1,11 @@
 package scouter;
 
 import java.util.Arrays;
-
+/**
+ * copies in case stuff got messed up
+ * @author Allen
+ *
+ */
 public class CopyOfTeam {
 	private Match[] m;//TODO change to vector
 	private boolean[] rb;
